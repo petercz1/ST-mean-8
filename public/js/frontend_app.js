@@ -7,6 +7,10 @@ frontend_app.config(do_routes);
 function do_routes($routeProvider) {
   console.log('doing frontend routes stuff');
   $routeProvider
-    .when()
-    .when();
+    .when('/',{
+
+    })
+    .when('/patient/:_id', {
+        
+    });
 }
