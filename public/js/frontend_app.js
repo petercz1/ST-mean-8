@@ -32,14 +32,10 @@ function do_single_patient($scope, $http, $routeParams) {
   console.log($routeParams);
   $scope.read = function () {
     console.log('getting single patient');
-    var route = '/api/v8/read/' + $routeParams._id;
-    console.log(route);
-    $http.get(route)
+    $http.get('/api/v8/read/' + $routeParams._id)
       .then(function (server_object) {
-        console.log(server_object);
-        $scope.single_patient = server_object.data;
-        console.log($scope.single_patient);
+        $scope.patient = server_object.data;
       });
   }
-  $scope.read();
+  
 }
