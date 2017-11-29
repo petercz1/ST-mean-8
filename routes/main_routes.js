@@ -34,7 +34,7 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
-  
+
   if(req.body.name == '' || req.body.name == null){
       res.json({error: 'no name of patient!'});
   }
@@ -48,7 +48,7 @@ function do_create(req, res) {
     },
     medical: {
       drug: req.body.drug,
-      usage: req.body.uage
+      usage: req.body.usage
     }
   };
   var patient = new PATIENTCLASS(data);
@@ -59,17 +59,13 @@ function do_update(req, res) {
   console.log('updating patient');
   console.log(req.body);
   var update = {
-      $set: {
-          name : req.body.name,
-          ...
-      }
+    $set: req.body.patient
   }
-//   var update = {
-//     $set: req.body.patient
-//   }
-  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update);
+  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update).then();
 }
 
 function do_delete(req, res) {
   console.log('deleting patient');
+  console.log(req.params);
+  PATIENTCLASS.findByIdAndRemove(req.params._id).then()
 }
