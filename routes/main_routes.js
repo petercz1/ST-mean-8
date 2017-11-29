@@ -53,8 +53,9 @@ function do_create(req, res) {
 function do_update(req, res) {
   console.log('updating patient');
   console.log(req.body);
-  
+  var update = req.body.patient;
 }
+
 
 function do_delete(req, res) {
   console.log('deleting patient');
