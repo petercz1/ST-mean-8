@@ -53,10 +53,11 @@ function do_create(req, res) {
 function do_update(req, res) {
   console.log('updating patient');
   console.log(req.body);
-  var update = req.body.patient;
-  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, req.body.patient);
+  var update = {
+    $set: req.body.patient
+  }
+  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update);
 }
-
 
 function do_delete(req, res) {
   console.log('deleting patient');
