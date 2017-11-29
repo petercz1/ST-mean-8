@@ -64,7 +64,10 @@ function do_create(req, res) {
     }
   };
   var patient = new PATIENTCLASS(data);
-  patient.save().then();
+  patient.save()
+    .then(function (params) {
+        
+    });
 }
 
 function do_update(req, res) {
