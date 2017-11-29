@@ -46,7 +46,8 @@ function do_create(req, res) {
       usage: req.body.uage
     }
   };
-  var patient = 
+  var patient = new PATIENTCLASS(data);
+  patient.save().then();
 }
 
 function do_update(req, res) {
