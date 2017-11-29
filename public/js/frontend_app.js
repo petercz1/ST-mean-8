@@ -40,6 +40,13 @@ function do_single_patient($scope, $http, $routeParams) {
   }
   $scope.read();
 
-  $scope.update
+  $scope.update = function (patient) {
+      console.log(patient);
+      $http.put('/api/v8/update', patient).then(
+          function () {
+              
+          }
+      )
+  }
 
 }
