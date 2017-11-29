@@ -22,6 +22,6 @@ function do_all_patients($scope, $http) {
     console.log('getting all patients');
 }
 
-function do_single_patient($scope, $http, $) {
+function do_single_patient($scope, $http, ) {
     
 }
