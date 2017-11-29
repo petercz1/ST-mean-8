@@ -20,9 +20,10 @@ router.delete('/api/v8/delete/:_id', do_delete);
 function do_get_all(req, res) {
   console.log('getting all records');
   PATIENTCLASS.find({}, {
-    name: 1,
-    gender: 1
-  }).then();
+      name: 1,
+      gender: 1
+    })
+    .then();
 }
 
 function do_get_one(req, res) {
@@ -35,8 +36,10 @@ function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
 
-  if(req.body.name == '' || req.body.name == null){
-      res.json({error: 'no name of patient!'});
+  if (req.body.name == '' || req.body.name == null) {
+    res.json({
+      error: 'no name of patient!'
+    });
   }
 
   var data = {
@@ -67,5 +70,5 @@ function do_update(req, res) {
 function do_delete(req, res) {
   console.log('deleting patient');
   console.log(req.params);
-  PATIENTCLASS.findByIdAndRemove(req.params._id).then()
+  PATIENTCLASS.findByIdAndRemove(req.params._id).then();
 }
