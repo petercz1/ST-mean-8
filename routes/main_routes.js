@@ -34,7 +34,7 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
-  var data = req.body.patient;
+  var data = req.body.incoming_patient;
 //   var data = {
 //     name: req.body.name,
 //     gender: req.body.gender,
