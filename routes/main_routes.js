@@ -19,10 +19,11 @@ router.delete('/api/v8/delete/:_id', do_delete);
 // api functions
 function do_get_all(req, res) {
     console.log('getting all records');
-    PATIENTCLASS.find({},{}).then();
+    PATIENTCLASS.find({},{name:1 , gender: 1}).then();
 }
 function do_get_one(req, res) {
     console.log('getting single patient');
+    console.log(req.body);
 }
 function do_create(req, res) {
     console.log('creating single patient');
