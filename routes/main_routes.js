@@ -24,6 +24,7 @@ function do_get_all(req, res) {
       gender: 1
     })
     .then(function (patients) {
+      console.log('all patients:');
       console.log(patients);
       res.json(patients);
     });
@@ -33,7 +34,11 @@ function do_get_one(req, res) {
   console.log('getting single patient');
   console.log(req.params);
   PATIENTCLASS.findById(req.params._id)
-    .then();
+    .then(function (patient) {
+      console.log('single patient:');
+      console.log(patient);
+      res.json(patient);
+    });
 }
 
 function do_create(req, res) {
