@@ -16,21 +16,25 @@ function do_routes($routeProvider) {
       templateUrl: 'partials/patient_record.html',
       controller: 'single_patient'
     });
-    console.log('end of routes');
+  console.log('end of routes');
 }
 
 function do_all_patients($scope, $http) {
   console.log('getting all patients');
   $http.get('/api/v8/read').then(function (server_object) {
-      console.log(server_object);
-      $scope.patients = server_object.data;
+    console.log(server_object);
+    $scope.patients = server_object.data;
   });
 }
 
 function do_single_patient($scope, $http, $routeParams) {
   console.log('getting single patient');
   $scope.read = function () {
-      console.log('getting single patient');
-      $http.get('/api/v8/read/'+ $routeParams._id).then()
+    console.log('getting single patient');
+    $http.get('/api/v8/read/' + $routeParams._id)
+      .then(function (server_object) {
+          console.log(server_object);
+          $scope.single_patient = server_object.data;
+      });
   }
 }
