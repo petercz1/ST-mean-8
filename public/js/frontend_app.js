@@ -31,5 +31,6 @@ function do_single_patient($scope, $http, $routeParams) {
   console.log('getting single patient');
   $scope.read = function () {
       console.log('getting single patient');
+      $http.get('/api/v8/read/'+ $routeParams._id).then()
   }
 }
