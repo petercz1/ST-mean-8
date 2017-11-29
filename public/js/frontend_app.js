@@ -30,6 +30,6 @@ function do_all_patients($scope, $http) {
 function do_single_patient($scope, $http, $routeParams) {
   console.log('getting single patient');
   $scope.read = function () {
-      
+      console.log('getting single patient');
   }
 }
