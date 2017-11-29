@@ -21,10 +21,11 @@ function do_get_all(req, res) {
     console.log('getting all records');
     PATIENTCLASS.find({},{name:1 , gender: 1}).then();
 }
+
 function do_get_one(req, res) {
     console.log('getting single patient');
     console.log(req.params);
-
+PATIENTCLASS.f
 }
 
 function do_create(req, res) {
