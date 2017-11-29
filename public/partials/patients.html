@@ -4,7 +4,8 @@
       <th>Patient</th>
     </tr>
   </thead>
-  <tbody>
-      
+  <tbody ng-repeat="patient in patients">
+    <tr ng-class="{'male': patent.gender == male, 'female': patient}"></tr>
+
   </tbody>
 </table>
