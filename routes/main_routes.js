@@ -23,10 +23,14 @@ function do_get_all(req, res) {
 }
 function do_get_one(req, res) {
     console.log('getting single patient');
-    console.log(req.body);
+    console.log(req.params);
+
 }
+
 function do_create(req, res) {
     console.log('creating single patient');
+    console.log(req.body);
+
 }
 function do_update(req, res) {
     console.log('updating patient');
