@@ -5,8 +5,8 @@ module.exports = router;
 router.get('/', do_homepage);
 
 function do_homepage(req, res) {
-    console.log('doing homepage');
-    res.render('index');
+  console.log('doing homepage');
+  res.render('index');
 }
 
 // api routes
@@ -18,24 +18,31 @@ router.delete('/api/v8/delete/:_id', do_delete);
 
 // api functions
 function do_get_all(req, res) {
-    console.log('getting all records');
-    PATIENTCLASS.find({},{name:1 , gender: 1}).then();
+  console.log('getting all records');
+  PATIENTCLASS.find({}, {
+    name: 1,
+    gender: 1
+  }).then();
 }
 
 function do_get_one(req, res) {
-    console.log('getting single patient');
-    console.log(req.params);
-PATIENTCLASS.f
+  console.log('getting single patient');
+  console.log(req.params);
+  PATIENTCLASS.findById(req.params._id).then();
 }
 
 function do_create(req, res) {
-    console.log('creating single patient');
-    console.log(req.body);
+  console.log('creating single patient');
+  console.log(req.body);
+var data = {
+    name: req.body.na
+}
+}
 
-}
 function do_update(req, res) {
-    console.log('updating patient');
+  console.log('updating patient');
 }
+
 function do_delete(req, res) {
-    console.log('deleting patient');
+  console.log('deleting patient');
 }
