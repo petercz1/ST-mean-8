@@ -16,6 +16,7 @@ function do_routes($routeProvider) {
       templateUrl: 'partials/patient_record.html',
       controller: single_patient
     });
+    console.log('end of routes');
 }
 
 function do_all_patients($scope, $http) {
