@@ -10,4 +10,8 @@ function do_homepage(req, res) {
 
 // app
 
-router.get()
+router.get('/', do_get_all);
+router.get('/', do_get_one);
+router.post('/', do_create);
+router.put('/', do_update);
+router.delete('/', do_delete);
