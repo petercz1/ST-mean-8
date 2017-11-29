@@ -34,9 +34,18 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
-var data = {
-    name: req.body.na
-}
+  var data = {
+    name: req.body.name,
+    gender: req.body.gender,
+    contact: {
+      email: req.body.email,
+      cell: req.body.cell
+    },
+    medical: {
+      drug: req.body.drug,
+      usage: req.body.uage
+    }
+  }
 }
 
 function do_update(req, res) {
