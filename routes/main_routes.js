@@ -54,6 +54,7 @@ function do_update(req, res) {
   console.log('updating patient');
   console.log(req.body);
   var update = req.body.patient;
+  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, req.body.patient);
 }
 
 
