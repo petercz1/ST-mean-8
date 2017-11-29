@@ -43,8 +43,9 @@ function do_single_patient($scope, $http, $routeParams) {
   $scope.update = function (patient) {
       console.log(patient);
       $http.put('/api/v8/update', patient).then(
-          function () {
-              
+          function (server_object) {
+            console.log(server_object);
+            
           }
       )
   }
