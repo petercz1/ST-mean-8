@@ -66,8 +66,10 @@ function do_create(req, res) {
   var patient = new PATIENTCLASS(data);
   patient.save()
     .then(function (result) {
-        console.log(result);
-        res.json({message: 'patient saved!'});
+      console.log(result);
+      res.json({
+        message: 'patient saved!'
+      });
     });
 }
 
@@ -77,11 +79,23 @@ function do_update(req, res) {
   var update = {
     $set: req.body.patient
   }
-  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update).then();
+  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update)
+    .then(function (result) {
+      console.log(result);
+      res.json({
+        message: 'patient updated!'
+      });
+    });
 }
 
 function do_delete(req, res) {
   console.log('deleting patient');
   console.log(req.params);
-  PATIENTCLASS.findByIdAndRemove(req.params._id).then();
+  PATIENTCLASS.findByIdAndRemove(req.params._id)
+    .then(function (result) {
+      console.log(result);
+      res.json({
+        message: 'patient deleted!'
+      });
+    });
 }
