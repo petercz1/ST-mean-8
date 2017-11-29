@@ -29,13 +29,13 @@ function do_all_patients($scope, $http) {
 
 function do_single_patient($scope, $http, $routeParams) {
   console.log('getting single patient');
-  console.log();
+  console.log($routeParams._id);
   $scope.read = function () {
     console.log('getting single patient');
     $http.get('/api/v8/read/' + $routeParams._id)
       .then(function (server_object) {
-          console.log(server_object);
-          $scope.single_patient = server_object.data;
+        console.log(server_object);
+        $scope.single_patient = server_object.data;
       });
   }
 }
