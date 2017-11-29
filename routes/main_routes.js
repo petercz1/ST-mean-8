@@ -45,7 +45,8 @@ function do_create(req, res) {
       drug: req.body.drug,
       usage: req.body.uage
     }
-  }
+  };
+  var patient = 
 }
 
 function do_update(req, res) {
