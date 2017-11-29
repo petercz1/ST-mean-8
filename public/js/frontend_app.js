@@ -10,11 +10,11 @@ function do_routes($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'partials/patients.html',
-      controller: all_patients
+      controller: 'all_patients'
     })
     .when('/patient/:_id', {
       templateUrl: 'partials/patient_record.html',
-      controller: single_patient
+      controller: 'single_patient'
     });
     console.log('end of routes');
 }
