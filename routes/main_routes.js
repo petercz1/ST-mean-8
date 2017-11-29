@@ -52,6 +52,8 @@ function do_create(req, res) {
 
 function do_update(req, res) {
   console.log('updating patient');
+  console.log(req.body);
+  
 }
 
 function do_delete(req, res) {
