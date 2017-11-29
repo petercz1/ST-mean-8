@@ -17,3 +17,11 @@ function do_routes($routeProvider) {
       controller: single_patient
     });
 }
+
+function do_all_patients($scope, $http) {
+    console.log('getting all patients');
+}
+
+function do_single_patient($scope, $http, $) {
+    
+}
