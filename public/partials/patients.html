@@ -7,7 +7,7 @@
   <tbody ng-repeat="patient in patients">
     <tr ng-class="{'male': patient.gender == 'Male', 'female': patient.gender == 'Female'}">
         <td>
-            <a href="patient/{{patient._id}}">
+            <a href="/api/v8/read/{{patient._id}}">
                 {{patient.name}}: {{patient.gender}}
             </a>
         </td>
