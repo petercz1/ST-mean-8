@@ -6,13 +6,13 @@ var contact_structure = {
     email: String,
     cell: String
 }
-var contact_schema = new mongoose.Schema(contact_structure);
+var contact_schema = new mongoose.Schema(contact_structure, { _id : false });
 
 var drugs_structure = {
     drug: String,
     usage: Number
 }
-var drugs_schema = new mongoose.Schema(drugs_structure);
+var drugs_schema = new mongoose.Schema(drugs_structure, { _id : false });
 
 var patient_structure = {
     name: String,
