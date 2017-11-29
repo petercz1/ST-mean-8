@@ -19,9 +19,10 @@ function do_routes($routeProvider) {
 }
 
 function do_all_patients($scope, $http) {
-    console.log('getting all patients');
+  console.log('getting all patients');
+  $http.get('/api/v8/read')
 }
 
-function do_single_patient($scope, $http, ) {
-    
+function do_single_patient($scope, $http, $routeParams) {
+  console.log('getting single patient');
 }
