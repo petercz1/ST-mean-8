@@ -77,9 +77,9 @@ function do_update(req, res) {
   console.log('updating patient');
   console.log(req.body);
   var update = {
-    $set: req.body.patient
+    $set: req.body
   }
-  PATIENTCLASS.findByIdAndUpdate(req.body.patient._id, update)
+  PATIENTCLASS.findByIdAndUpdate(req.body._id, update)
     .then(function (result) {
       console.log(result);
       res.json({
