@@ -23,13 +23,17 @@ function do_get_all(req, res) {
       name: 1,
       gender: 1
     })
-    .then();
+    .then(function (patients) {
+      console.log(patients);
+      res.json(patients);
+    });
 }
 
 function do_get_one(req, res) {
   console.log('getting single patient');
   console.log(req.params);
-  PATIENTCLASS.findById(req.params._id).then();
+  PATIENTCLASS.findById(req.params._id)
+    .then();
 }
 
 function do_create(req, res) {
