@@ -65,8 +65,9 @@ function do_create(req, res) {
   };
   var patient = new PATIENTCLASS(data);
   patient.save()
-    .then(function (params) {
-        
+    .then(function (result) {
+        console.log(result);
+        res.json({message: 'patient saved!'});
     });
 }
 
