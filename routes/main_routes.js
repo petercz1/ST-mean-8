@@ -53,7 +53,12 @@ function do_create(req, res) {
 function do_update(req, res) {
   console.log('updating patient');
   console.log(req.body);
-  
+  var update = {
+      $set: {
+          name : req.body.name,
+          ...
+      }
+  }
 //   var update = {
 //     $set: req.body.patient
 //   }
