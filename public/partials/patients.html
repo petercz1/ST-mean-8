@@ -5,7 +5,13 @@
     </tr>
   </thead>
   <tbody ng-repeat="patient in patients">
-    <tr ng-class="{'male': patent.gender == male, 'female': patient}"></tr>
+    <tr ng-class="{'male': patent.gender == male, 'female': patient.gender == 'Female'}">
+        <td>
+            <a href="patient/{{patient._id}}">
+                
+            </a>
+        </td>
+    </tr>
 
   </tbody>
 </table>
