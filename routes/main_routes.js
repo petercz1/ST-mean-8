@@ -34,18 +34,19 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
-  var data = {
-    name: req.body.name,
-    gender: req.body.gender,
-    contact: {
-      email: req.body.email,
-      cell: req.body.cell
-    },
-    medical: {
-      drug: req.body.drug,
-      usage: req.body.uage
-    }
-  };
+  var data = req.body.patient;
+//   var data = {
+//     name: req.body.name,
+//     gender: req.body.gender,
+//     contact: {
+//       email: req.body.email,
+//       cell: req.body.cell
+//     },
+//     medical: {
+//       drug: req.body.drug,
+//       usage: req.body.uage
+//     }
+//   };
   var patient = new PATIENTCLASS(data);
   patient.save().then();
 }
