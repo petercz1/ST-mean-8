@@ -34,9 +34,11 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
+  
   if(req.body.name == '' || req.body.name == null){
       res.json({error: 'no name of patient!'});
   }
+
   var data = {
     name: req.body.name,
     gender: req.body.gender,
