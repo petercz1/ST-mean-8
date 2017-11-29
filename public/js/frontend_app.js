@@ -38,6 +38,7 @@ function do_single_patient($scope, $http, $routeParams) {
       .then(function (server_object) {
         console.log(server_object);
         $scope.single_patient = server_object.data;
+        console.log($scope.single_patient);
       });
   }
   $scope.read();
