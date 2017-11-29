@@ -25,7 +25,7 @@ function do_get_all(req, res) {
     })
     .then(function (patients) {
       console.log('all patients:');
-      console.log(patients);
+      //console.log(patients);
       res.json(patients);
     });
 }
