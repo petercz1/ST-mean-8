@@ -20,14 +20,14 @@ function do_get_all(req, res) {
     console.log('getting all records');
 }
 function do_get_one(req, res) {
-    console.log('getting singl patient');
+    console.log('getting single patient');
 }
-function do_get_all(req, res) {
-    console.log('getting all records');
+function do_create(req, res) {
+    console.log('creating single patient');
 }
-function do_get_all(req, res) {
-    console.log('getting all records');
+function do_update(req, res) {
+    console.log('updating patient');
 }
-function do_get_all(req, res) {
-    console.log('getting all records');
+function do_delete(req, res) {
+    console.log('deleting patient');
 }
