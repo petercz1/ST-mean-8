@@ -25,4 +25,8 @@ function do_single_patient($scope, $http, $routeParams) {
         }
       )
     }
+
+    $scope.delete = function (patient) {
+      
+    }
   }
