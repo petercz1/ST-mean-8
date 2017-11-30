@@ -1,32 +1,32 @@
-
 function do_single_patient($scope, $http, $routeParams) {
-    console.log('getting single patient');
-    console.log($routeParams);
+  console.log('getting single patient');
+  console.log($routeParams);
 
-    $scope.read = function () {
-      console.log('getting patient record from backend');
+  $scope.read = function () {
+    console.log('getting patient record from backend');
 
-      $http.get('/api/v8/read/' + $routeParams._id)
+    $http.get('/api/v8/read/' + $routeParams._id)
 
-        .then(function (server_object) {
-          console.log('retrieved patent from backend');
-          console.log(server_object);
-          $scope.patient = server_object.data;
-        });
-    }
-    $scope.read();
-  
-    $scope.update = function (patient) {
-      console.log(patient);
-      $http.put('/api/v8/update', patient).then(
-        function (server_object) {
-          console.log(server_object);
-          $scope.message = server_object.data.message;
-        }
-      )
-    }
-
-    $scope.delete = function (patient) {
-      
-    }
+      .then(function (server_object) {
+        console.log('retrieved patent from backend');
+        console.log(server_object);
+        $scope.patient = server_object.data;
+      });
   }
+  $scope.read();
+
+  $scope.update = function (patient) {
+    console.log(patient);
+    $http.put('/api/v8/update', patient).then(
+      function (server_object) {
+        console.log(server_object);
+        $scope.message = server_object.data.message;
+      }
+    )
+  }
+
+  $scope.delete = function (patient) {
+    console.log('deleting patient');
+    $thhp
+  }
+}
