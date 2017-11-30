@@ -44,7 +44,6 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
-
 //   if (req.body.name == '' || req.body.name == null) {
 //     res.json({
 //       error: 'no name of patient!'
@@ -55,17 +54,20 @@ function do_create(req, res) {
     name: req.body.name,
     gender: req.body.gender,
     contact: {
-      email: req.body.email,
-      cell: req.body.cell
+      email: req.body.contact.email,
+      cell: req.body.contact.cell
     },
     medical: {
-      drug: req.body.drug,
-      usage: req.body.usage
+      drug: req.body.medical.drug,
+      usage: req.body.medical.usage
     }
   };
+  console.log(data);
   var patient = new PATIENTCLASS(data);
+  console.log('logging patient...');
   patient.save()
     .then(function (result) {
+      console.log('created?');
       console.log(result);
       res.json({
         message: 'patient saved!'
