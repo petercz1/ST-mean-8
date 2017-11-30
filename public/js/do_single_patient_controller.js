@@ -7,9 +7,10 @@ function do_single_patient($scope, $http, $routeParams) {
       console.log('getting patient record from backend');
 
       $http.get('/api/v8/read/' + $routeParams._id)
-      
+
         .then(function (server_object) {
           console.log('retrieved patent from backend');
+          console.log(server_object);
           $scope.patient = server_object.data;
         });
     }
