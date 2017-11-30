@@ -19,7 +19,10 @@ router.delete('/api/v8/delete/:_id', do_delete);
 // api functions
 function do_get_all(req, res) {
   console.log('getting all records');
-  PATIENTCLASS.find({}, {name: 1, gender: 1})
+  PATIENTCLASS.find({}, {
+      name: 1,
+      gender: 1
+    })
     .then(function (patients) {
       console.log('all patients:');
       //console.log(patients);
@@ -30,6 +33,9 @@ function do_get_all(req, res) {
 function do_get_one(req, res) {
   console.log('getting single patient');
   console.log(req.params);
+PATIENTCLASS.find({},{})
+
+
   PATIENTCLASS.findById(req.params._id)
     .then(function (patient) {
       console.log('single patient:');
@@ -41,11 +47,11 @@ function do_get_one(req, res) {
 function do_create(req, res) {
   console.log('creating single patient');
   console.log(req.body);
-//   if (req.body.name == '' || req.body.name == null) {
-//     res.json({
-//       error: 'no name of patient!'
-//     });
-//   }
+  //   if (req.body.name == '' || req.body.name == null) {
+  //     res.json({
+  //       error: 'no name of patient!'
+  //     });
+  //   }
 
   var data = {
     name: req.body.name,
