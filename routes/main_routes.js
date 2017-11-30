@@ -63,7 +63,7 @@ function do_create(req, res) {
     }
   };
   console.log(data);
-  var patient = new PATIENTCLASS(req.data);
+  var patient = new PATIENTCLASS(data);
   console.log('logging patient...');
   patient.save()
     .then(function (result) {
