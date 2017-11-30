@@ -28,6 +28,9 @@ function do_single_patient($scope, $http, $routeParams) {
   $scope.delete = function (patient) {
     console.log('deleting patient');
     $http.delete('/api/v8/delete/' + patient._id)
-      .then()
+      .then(function (server_object) {
+        console.log(server_object);
+        $scope.message = server_object.data.message;
+      })
   }
 }
