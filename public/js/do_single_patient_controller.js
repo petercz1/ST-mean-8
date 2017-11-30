@@ -25,5 +25,4 @@ function do_single_patient($scope, $http, $routeParams) {
         }
       )
     }
-  
   }
