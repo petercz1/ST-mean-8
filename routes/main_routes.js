@@ -33,9 +33,6 @@ function do_get_all(req, res) {
 function do_get_one(req, res) {
   console.log('getting single patient');
   console.log(req.params);
-PATIENTCLASS.find({},{})
-
-
   PATIENTCLASS.findById(req.params._id)
     .then(function (patient) {
       console.log('single patient:');
