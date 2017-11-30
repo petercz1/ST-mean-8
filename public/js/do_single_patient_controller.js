@@ -2,6 +2,7 @@
 function do_single_patient($scope, $http, $routeParams) {
     console.log('getting single patient');
     console.log($routeParams);
+    
     $scope.read = function () {
       console.log('getting patient record from backend');
       $http.get('/api/v8/read/' + $routeParams._id)
